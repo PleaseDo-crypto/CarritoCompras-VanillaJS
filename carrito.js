@@ -9,6 +9,9 @@ addToShoppingCartButtons.forEach(addToCartButton => {
     addToCartButton.addEventListener('click', addToCartClicked);
 });
 
+const buyButton = document.querySelector('.comprarButton');
+buyButton.addEventListener('click', buyButtonClicked);
+
 const shoppingCartItemsContainer = document.querySelector('.shoppingCartItemsContainer');
 
 
@@ -118,5 +121,10 @@ function quantityChanged(event){
         //El valor no podrá ser 0 ni negativo.
         input.value = 1;
     }
+    updateShoppingCartTotal();
+}
+
+function buyButtonClicked(){
+    shoppingCartItemsContainer.innerHTML = '';
     updateShoppingCartTotal();
 }
