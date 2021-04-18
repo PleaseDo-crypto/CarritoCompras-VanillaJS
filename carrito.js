@@ -58,6 +58,10 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage){
     shoppingCartRow.querySelector('.buttonDelete').addEventListener
     ('click', removeShoppingCartItem);
 
+    shoppingCartRow
+     .querySelector('.shoppingCartItemQuantity')
+     .addEventListener('change', quantityChanged);
+
     updateShoppingCartTotal()
 }
 
@@ -85,7 +89,20 @@ function updateShoppingCartTotal(){
 }
 
 function removeShoppingCartItem(event){
+    //Tomamos el evento
     const buttonClicked = event.target;
+    //Removemos el nodo
     buttonClicked.closest('.shoppingCartItem').remove();
+    //Actualizamos el precio haciendo de nuevo la operación de total.
+    updateShoppingCartTotal();
+}
+
+function quantityChanged(event){
+    //Tomamos el evento
+    const input = event.target;
+    if (input.value <=0){
+        //El valor no podrá ser 0 ni negativo.
+        input.value = 1;
+    }
     updateShoppingCartTotal();
 }
