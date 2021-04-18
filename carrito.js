@@ -38,7 +38,7 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage){
         </div>
         <div class="col-2">
             <div class="shopping-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                <p class="item-price mb-0 shoppingCartItemPrice">${itemPrice}$MXN</p>
+                <p class="item-price mb-0 shoppingCartItemPrice">${itemPrice}</p>
             </div>
         </div>
         <div class="col-4">
@@ -54,4 +54,30 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage){
     shoppingCartRow.innerHTML = shoppingCartContent
     //Lo incluimos con append en shoppingCartItemsContainer
     shoppingCartItemsContainer.append(shoppingCartRow);
+
+    updateShoppingCartTotal()
+}
+
+function updateShoppingCartTotal(){
+    let total = 0;
+    //Muestra el valor en pantalla (Lo imprime donde toma la clase)
+    const shoppingCartTotal = document.querySelector('.shoppingCartTotal');
+    // Seleccionamos todos los elementos con la clase shoppingCartItem
+    const shoppingCartItems = document.querySelectorAll('.shoppingCartItem');
+
+    shoppingCartItems.forEach((shoppingCartItem) => {
+        // Tomamos el Precio por cada Item
+        const shoppingCartItemPriceElement = shoppingCartItem.querySelector('.shoppingCartItemPrice');
+                                                                        //Sustituimos € por un String vacio 
+        const shoppingCartItemPrice = Number(shoppingCartItemPriceElement.textContent.replace('€', ''));
+        
+        const shoppingCartItemQuantityElement = shoppingCartItem.querySelector('.shoppingCartItemQuantity');
+        //Tomamos el valor extraido de shoppingCartItemQuantityElement
+        const shoppingCartItemQuantity = Number(shoppingCartItemQuantityElement.value);
+        //Operación de nuestro precio total
+        total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
+    })
+    //Mostramos nuestro valor total de la operación
+    shoppingCartTotal.innerHTML = `${total.toFixed(2)}MXN`
+
 }
