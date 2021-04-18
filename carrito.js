@@ -26,6 +26,20 @@ function addToCartClicked(event){
     addItemToShoppingCart(itemTitle, itemPrice, itemImage);
 }
 function addItemToShoppingCart(itemTitle, itemPrice, itemImage){
+    const elementsTitle = shoppingCartItemsContainer.getElementsByClassName
+    ('shoppingCartItemTitle');
+
+    for(let i = 0; i< elementsTitle.length; i++){
+        if (elementsTitle[i].innerText === itemTitle){
+            let elementQuantity = elementsTitle[i].parentElement.parentElement.parentElement.
+            querySelector('.shoppingCartItemQuantity');
+            elementQuantity.value++;
+            $('.toast').toast('show');
+            updateShoppingCartTotal();
+            return;
+        }
+    }
+
     // console.log(itemTitle, itemPrice, itemImage)
     const shoppingCartRow = document.createElement('div');
     const shoppingCartContent = `
