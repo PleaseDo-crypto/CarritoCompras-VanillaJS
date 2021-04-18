@@ -99,7 +99,7 @@ function updateShoppingCartTotal(){
         //Tomamos el valor extraido de shoppingCartItemQuantityElement
         const shoppingCartItemQuantity = Number(shoppingCartItemQuantityElement.value);
         //Operación de nuestro precio total
-        total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
+       total = total + shoppingCartItemPrice * shoppingCartItemQuantity; 
     })
     //Mostramos nuestro valor total de la operación
     shoppingCartTotal.innerHTML = `${total.toFixed(2)}MXN`
