@@ -55,6 +55,9 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage){
     //Lo incluimos con append en shoppingCartItemsContainer
     shoppingCartItemsContainer.append(shoppingCartRow);
 
+    shoppingCartRow.querySelector('.buttonDelete').addEventListener
+    ('click', removeShoppingCartItem);
+
     updateShoppingCartTotal()
 }
 
@@ -79,5 +82,10 @@ function updateShoppingCartTotal(){
     })
     //Mostramos nuestro valor total de la operación
     shoppingCartTotal.innerHTML = `${total.toFixed(2)}MXN`
+}
 
+function removeShoppingCartItem(event){
+    const buttonClicked = event.target;
+    buttonClicked.closest('.shoppingCartItem').remove();
+    updateShoppingCartTotal();
 }
