@@ -2,7 +2,7 @@
 
 //Seleccionamos todos los elementos con la clase 'addToCart'
 const addToShoppingCartButtons = document.querySelectorAll('.addToCart');
-// console.log('addToShoppingCartButtons', addToShoppingCartButtons);
+console.log('addToShoppingCartButtons', addToShoppingCartButtons);
 
 //Añadimos un evento por cada botón del carrito
 addToShoppingCartButtons.forEach(addToCartButton => {
