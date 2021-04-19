@@ -34,7 +34,7 @@
     </nav>
     <header>
         <div class="container">
-            <h1 class="text-center">TIENDA</h1>
+            <h1 class="text-center" style="color:black"><b>KINGDOM GAMES - TIENDA DE VIDEOJUEGOS</b></h1>
             <hr>
         </div>
     </header>
@@ -50,27 +50,42 @@
                     <div class="container">
                         <!-- COMIENZAN TODAS LAS CARDS CON LOS PRODUCTOS -->
 
+                        <!-- DIV DE COLUMNAS -->
                         <div class="row pt-5 m-auto">
+
+                        <!-- Primera Card -->
                           <div class="col-md-6 col-lg-4 pb-3">
                             <div class="card card-custom bg-white border-white border-0 item">
-                              <div class="card-custom-img" style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+                              <div class="card-custom-img" style="background-image: url(img/resident.png);"></div>
                               <div class="card-custom-avatar">
-                                <img class="img-fluid item-image" src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg" alt="Avatar" />
+                                <img class="img-fluid item-image" src="img/resident-avatar.jpg" alt="Avatar" />
                               </div>
                               <div class="card-body" style="overflow-y: auto">
-                                <h4 class="card-title item-title">Título de Juego</h4>
-                                <p class="card-text item-price">Precio: 5.99<p>
+                                <h4 class="card-title item-title" style="color:black">Resident Evil: Remake</h4>
+                                <p class="card-text"><b>Descripción:</b> Resident Evil​ es un videojuego japonés del género survival horror desarrollado y publicado por Capcom.<p>
+                                    <div>
+                                         <div style="display: inline;">
+                                            <b style="color:black">Precio Anterior:</b>
+                                            <strike>300.49 $MXN</strike>
+                                        </div>
+                                        <div>
+                                            <b style="color:black">Precio Actual:</b>
+                                            <p class="card-text item-price" style="color:#3A4047;display: inline;"><b>75.99 $MXN</b><p>
+                                        </div>
+                                    </div>
                               </div>
                               <div class="card-footer" style="background: inherit; border-color: inherit;">
-                                <button class="btn btn-primary addToCart">Option</button>
-                                <a href="#" class="btn btn-outline-primary">Other option</a>
+                                <button class="btn btn-info addToCart" style="margin-right: 85px;">Añadir al Carrito</button>
+                                <span class="badge badge-pill badge-danger">-38% Descuento</span>
                               </div>
                             </div>
                           </div>
+                        <!-- Termina Primera Card -->
+
+
+                        <!-- TERMINA EL DIV DE COLUMNAS -->
                         </div>
-
                         <!-- TERMINAN TODAS LAS CARDS CON LOS PRODUCTOS -->
-
                     <!-- TERMINA CONTAINER DE LAS CARTAS -->
                     </div>
                 <!-- TERMINA DIV ROW -->
@@ -113,7 +128,7 @@
                 <div class="col-12">
                     <div class="shopping-cart-total d-flex align-items-center">
                         <p class="mb-0">Total</p>
-                        <p class="ml-4 mb-0 shoppingCartTotal">0€</p>
+                        <p class="ml-4 mb-0 shoppingCartTotal">0 $MXN</p>
                         <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
                             data-delay="2000">
                             <div class="toast-header">
@@ -156,7 +171,6 @@
                 </div>
             </div>
             <!-- TERMINA EL MODAL DE COMPRA -->
-
 
         </div>
 

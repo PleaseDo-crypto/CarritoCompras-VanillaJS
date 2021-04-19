@@ -93,7 +93,7 @@ function updateShoppingCartTotal(){
         // Tomamos el Precio por cada Item
         const shoppingCartItemPriceElement = shoppingCartItem.querySelector('.shoppingCartItemPrice');
                                                                         //Sustituimos € por un String vacio 
-        const shoppingCartItemPrice = Number(shoppingCartItemPriceElement.textContent.replace('€', ''));
+        const shoppingCartItemPrice = Number(shoppingCartItemPriceElement.textContent.replace('$MXN', ''));
         
         const shoppingCartItemQuantityElement = shoppingCartItem.querySelector('.shoppingCartItemQuantity');
         //Tomamos el valor extraido de shoppingCartItemQuantityElement
@@ -102,7 +102,7 @@ function updateShoppingCartTotal(){
        total = total + shoppingCartItemPrice * shoppingCartItemQuantity; 
     })
     //Mostramos nuestro valor total de la operación
-    shoppingCartTotal.innerHTML = `${total.toFixed(2)}MXN`
+    shoppingCartTotal.innerHTML = `${total.toFixed(2)} $MXN`
 }
 
 function removeShoppingCartItem(event){
