@@ -7,7 +7,21 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cards.css"> 
     <title>Tienda</title>
+
+    <style>
+        html {
+          font-size: 14px;
+        }
+        
+        .container {
+          font-size: 14px;
+          color: #666666;
+          font-family: "Open Sans";
+        }
+      </style>
+
 </head>
 
 <body>
@@ -24,92 +38,79 @@
             <hr>
         </div>
     </header>
-    <!-- START SECTION STORE -->
+    <!-- SECCIÓN DE CATÁLOGO -->
     <section class="store">
         <div class="container">
             <div class="items">
                 <div class="row">
 
-                    <div class="col-12 col-md-6">
-                        <div class="item shadow mb-4">
-                            <h3 class="item-title">Pokemon Azul</h3>
-                            <img class="item-image" src="./img/pokemon-azul.jpg">
-
-                            <div class="item-details">
-                                <h4 class="item-price">9.99€</h4>
-                                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                    <div class="container">
+                        <div class="row pt-5 m-auto">
+                          <div class="col-md-6 col-lg-4 pb-3">
+                    
+                            <!-- Copy the content below until next comment -->
+                            <div class="card card-custom bg-white border-white border-0">
+                              <div class="card-custom-img" style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+                              <div class="card-custom-avatar">
+                                <img class="img-fluid" src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg" alt="Avatar" />
+                              </div>
+                              <div class="card-body" style="overflow-y: auto">
+                                <h4 class="card-title item-title">Card title</h4>
+                                <p class="card-text item-price">Precio <a href="https://getbootstrap.com/docs/4.0/components/card/#card-decks" target="_blank">card-decks</a> to align multiple cards nicely in a row.</p>
+                              </div>
+                              <div class="card-footer" style="background: inherit; border-color: inherit;">
+                                <button class="btn btn-primary addToCart">Option</button>
+                                <a href="#" class="btn btn-outline-primary">Other option</a>
+                              </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="item shadow mb-4">
-                            <h3 class="item-title">Pokemon Rojo</h3>
-
-                            <img class="item-image" src="./img/pokemon-rojo.jpg">
-
-                            <div class="item-details">
-                                <h4 class="item-price">9.99€</h4>
-                                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                            <!-- Copy until here -->
+                    
+                          </div>
+                          <div class="col-md-6 col-lg-4 pb-3">
+                    
+                            <!-- Add a style="height: XYZpx" to div.card to limit the card height and display scrollbar instead -->
+                            <div class="card card-custom bg-white border-white border-0" style="height: 450px">
+                              <div class="card-custom-img" style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+                              <div class="card-custom-avatar">
+                                <img class="img-fluid" src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg" alt="Avatar" />
+                              </div>
+                              <div class="card-body" style="overflow-y: auto">
+                                <h4 class="card-title">Card title</h4>
+                                <p class="card-text">You can also set maximum height on and the card will not expand, instead a scrollbar in the card body will appear.</p>
+                                <p class="card-text">Some example text to show the scrollbar.</p>
+                                <p class="card-text">Lorem ipsum dolor sit amet, te vix omittam fastidii, enim paulo omnes ea has, illud luptatum no qui. Sed ea qualisque urbanitas, purto elit nec te. Possim inermis antiopam ut eum. Eos te zril labore laboramus, quem erant nam in. Ut sed molestie
+                                  antiopam. At altera facilisis mel.</p>
+                              </div>
+                              <div class="card-footer" style="background: inherit; border-color: inherit;">
+                                <a href="#" class="btn btn-primary">Option</a>
+                                <a href="#" class="btn btn-outline-primary">Other option</a>
+                              </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        <div class="item shadow mb-4">
-                            <h3 class="item-title">Pokemon Verde</h3>
-
-                            <img class="item-image" src="./img/pokemon-verde.jpg">
-
-                            <div class="item-details">
-                                <h4 class="item-price">9.99€</h4>
-                                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                    
+                          </div>
+                          <div class="col-md-6 col-lg-4 pb-3">
+                    
+                            <div class="card card-custom bg-white border-white border-0">
+                              <div class="card-body">
+                                <img src="http://res.cloudinary.com/d3/image/upload/c_scale,h_450,q_auto:best/color-cards_lorvwg.jpg" alt="Colored cards" class="img-fluid">
+                                <p>You can use this card together with standard Bootstrap 4 cards and use card features on it.</p>
+                                <p class="h5 text-center pt-3">See the card on GitHub:</p>
+                                <p class="h1 text-center"><a href="https://github.com/peterdanis/custom-bootstrap-cards" target="_blank"><i class="fa fa-github"></i></a></p>
+                    
+                              </div>
                             </div>
+                    
+                          </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="item shadow mb-4">
-                            <h3 class="item-title">Pokemon Plata</h3>
-
-                            <img class="item-image" src="./img/pokemon-plata.jpg">
-
-                            <div class="item-details">
-                                <h4 class="item-price">19.99€</h4>
-                                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        <div class="item shadow mb-4">
-                            <h3 class="item-title">Pokemon Oro</h3>
-
-                            <img class="item-image" src="./img/pokemon-oro.jpg">
-                            <div class="item-details">
-                                <h4 class="item-price">19.99€</h4>
-                                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="item shadow mb-4">
-                            <h3 class="item-title">Sonic</h3>
-
-                            <img class="item-image" src="./img/sonic.jpg">
-                            <div class="item-details">
-                                <h4 class="item-price">6.99€</h4>
-                                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
-                            </div>
-                        </div>
+                      </div>
+                    
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- END SECTION STORE -->
-    <!-- START SECTION SHOPPING CART -->
+    <!-- TERMINA SECCIÓN DE CATÁLOGO -->
+    <!-- COMIENZA EL CARRITO -->
     <section class="shopping-cart">
         <div class="container">
             <h1 class="text-center">CARRITO</h1>
@@ -131,12 +132,12 @@
                     </div>
                 </div>
             </div>
-            <!-- ? START SHOPPING CART ITEMS -->
+            <!-- PRODUCTOS DE CARRITO -->
             <div class="shopping-cart-items shoppingCartItemsContainer">
             </div>
-            <!-- ? END SHOPPING CART ITEMS -->
+            <!-- ? TERMINAN LOS PRODUCTOS DE CARRITO -->
 
-            <!-- START TOTAL -->
+            <!-- SECCIÓN DE PRECIO TOTAL -->
             <div class="row">
                 <div class="col-12">
                     <div class="shopping-cart-total d-flex align-items-center">
@@ -161,9 +162,9 @@
                 </div>
             </div>
 
-            <!-- END TOTAL -->
+            <!-- TERMINA SECCIÓN DE PRECIO TOTAL -->
 
-            <!-- START MODAL COMPRA -->
+            <!-- COMIENZA EL MODAL DE COMPRA -->
             <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
@@ -183,20 +184,20 @@
                     </div>
                 </div>
             </div>
-            <!-- END MODAL COMPRA -->
+            <!-- TERMINA EL MODAL DE COMPRA -->
 
 
         </div>
 
     </section>
-    <!-- END SECTION SHOPPING CART -->
+    <!-- TERMINA EL CARRITO -->
 
 
-    <!-- START FOOTER -->
+    <!-- PIE DE PÁGINA -->
     <footer class="bg-dark p-3 mt-5">
         <p class="text-center m-0 text-muted">Tienda video juegos</p>
     </footer>
-    <!-- END FOOTER -->
+    <!-- TERMINA EL PIE DE PAGINA -->
 
 
 
