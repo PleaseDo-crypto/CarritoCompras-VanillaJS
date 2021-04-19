@@ -12,6 +12,12 @@ addToShoppingCartButtons.forEach(addToCartButton => {
 const buyButton = document.querySelector('.comprarButton');
 buyButton.addEventListener('click', buyButtonClicked);
 
+const voidButton = document.querySelector('.vaciarButton');
+voidButton.addEventListener('click', voidButtonClicked);
+
+const discountInputElement = document.querySelector('.discountTotal');
+discountInputElement.addEventListener('keyup', discountInputKeyup);
+
 const shoppingCartItemsContainer = document.querySelector('.shoppingCartItemsContainer');
 
 
@@ -82,12 +88,13 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage){
     updateShoppingCartTotal()
 }
 
-function updateShoppingCartTotal(){
+function updateShoppingCartTotal(discountInput){
     let total = 0;
     //Muestra el valor en pantalla (Lo imprime donde toma la clase)
     const shoppingCartTotal = document.querySelector('.shoppingCartTotal');
     // Seleccionamos todos los elementos con la clase shoppingCartItem
     const shoppingCartItems = document.querySelectorAll('.shoppingCartItem');
+
 
     shoppingCartItems.forEach((shoppingCartItem) => {
         // Tomamos el Precio por cada Item
@@ -98,9 +105,28 @@ function updateShoppingCartTotal(){
         const shoppingCartItemQuantityElement = shoppingCartItem.querySelector('.shoppingCartItemQuantity');
         //Tomamos el valor extraido de shoppingCartItemQuantityElement
         const shoppingCartItemQuantity = Number(shoppingCartItemQuantityElement.value);
+        
         //Operación de nuestro precio total
-       total = total + shoppingCartItemPrice * shoppingCartItemQuantity; 
-    })
+        
+            
+            total = total + shoppingCartItemPrice * shoppingCartItemQuantity;    
+            if(total < 0){
+                total = 0
+            }
+       
+    });
+
+        
+
+        if(discountInput > 0){
+            total = total - discountInput;
+            if(total < 0)
+            {
+                total = 0
+            }
+        }
+        
+    
     //Mostramos nuestro valor total de la operación
     shoppingCartTotal.innerHTML = `${total.toFixed(2)} $MXN`
 }
@@ -127,4 +153,18 @@ function quantityChanged(event){
 function buyButtonClicked(){
     shoppingCartItemsContainer.innerHTML = '';
     updateShoppingCartTotal();
+}
+
+//Funcion para vaciar el carrito
+function voidButtonClicked(){
+    shoppingCartItemsContainer.innerHTML = '';
+    updateShoppingCartTotal();  
+}
+
+//Funcion para vaciar el carrito
+function discountInputKeyup(){
+    let discountInput = 0;
+    discountInput = Number(discountInputElement.value)
+    // console.log(discountInput)
+    updateShoppingCartTotal(discountInput);
 }
