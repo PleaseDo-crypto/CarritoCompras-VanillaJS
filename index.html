@@ -8,6 +8,8 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="cards.css"> 
+    <link rel="stylesheet" href="zoom.css"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>Tienda</title>
 
     <style>
@@ -45,13 +47,19 @@
                     <div class="container">
                         <!-- COMIENZAN TODAS LAS CARDS CON LOS PRODUCTOS -->
 
+                        <!-- Botón de Notificaciones -->
+                        <button type="button" class="btn btn-primary" id="test">
+                          <i class="fas fa-shopping-cart"></i> Productos en Carrito: <span class="notifQuantity"></span>
+                        </button>
+
+
                         <!-- DIV DE COLUMNAS -->
                         <div class="row pt-5 m-auto">
 
                         <!-- Primera Card -->
                           <div class="col-md-6 col-lg-4 pb-3">
                             <div class="card card-custom bg-white border-white border-0 item">
-                              <div class="card-custom-img" style="background-image: url(img/resident.png);"></div>
+                              <div class="card-custom-img zoom" style="background-image: url(img/resident.png);"></div>
                               <div class="card-custom-avatar">
                                 <img class="img-fluid item-image" src="img/resident-avatar.jpg" alt="Avatar" />
                               </div>
@@ -80,7 +88,7 @@
                         <!-- Segunda Card -->
                           <div class="col-md-6 col-lg-4 pb-3">
                             <div class="card card-custom bg-white border-white border-0 item">
-                              <div class="card-custom-img" style="background-image: url(img/dying.jpeg);"></div>
+                              <div class="card-custom-img zoom" style="background-image: url(img/dying.jpeg);"></div>
                               <div class="card-custom-avatar">
                                 <img class="img-fluid item-image" src="img/dying-avatar.png" alt="Avatar" />
                               </div>
@@ -109,7 +117,7 @@
                         <!-- Tercera Card -->
                           <div class="col-md-6 col-lg-4 pb-3">
                             <div class="card card-custom bg-white border-white border-0 item">
-                              <div class="card-custom-img" style="background-image: url(img/megax.jpg);"></div>
+                              <div class="card-custom-img zoom" style="background-image: url(img/megax.jpg);"></div>
                               <div class="card-custom-avatar">
                                 <img class="img-fluid item-image" src="img/megax-avatar.png" alt="Avatar" />
                               </div>
@@ -138,7 +146,7 @@
                         <!-- Cuarta Card -->
                           <div class="col-md-6 col-lg-4 pb-3">
                             <div class="card card-custom bg-white border-white border-0 item">
-                              <div class="card-custom-img" style="background-image: url(img/hollow.jpg);"></div>
+                              <div class="card-custom-img zoom" style="background-image: url(img/hollow.jpg);"></div>
                               <div class="card-custom-avatar">
                                 <img class="img-fluid item-image" src="img/hollow-avatar.png" alt="Avatar" />
                               </div>
@@ -167,7 +175,7 @@
                         <!-- Quinta Card -->
                           <div class="col-md-6 col-lg-4 pb-3">
                             <div class="card card-custom bg-white border-white border-0 item">
-                              <div class="card-custom-img" style="background-image: url(img/halo.jpg);"></div>
+                              <div class="card-custom-img zoom" style="background-image: url(img/halo.jpg);"></div>
                               <div class="card-custom-avatar">
                                 <img class="img-fluid item-image" src="img/halo-avatar.png" alt="Avatar" />
                               </div>
@@ -196,7 +204,7 @@
                         <!-- Sexta Card -->
                           <div class="col-md-6 col-lg-4 pb-3">
                             <div class="card card-custom bg-white border-white border-0 item">
-                              <div class="card-custom-img" style="background-image: url(img/bbcf.jpg);"></div>
+                              <div class="card-custom-img zoom" style="background-image: url(img/bbcf.jpg);"></div>
                               <div class="card-custom-avatar">
                                 <img class="img-fluid item-image" src="img/bbcf-avatar.png" alt="Avatar" />
                               </div>
@@ -216,7 +224,7 @@
                               </div>
                               <div class="card-footer" style="background: inherit; border-color: inherit;">
                                 <button class="btn btn-info addToCart" style="margin-right: 75px;">Añadir al Carrito</button>
-                                <span class="badge badge-pill badge-danger">-50% Descuento</span>
+                                <span class="badge badge-pill badge-danger" id="descuento">-50% Descuento</span>
                               </div>
                             </div>
                           </div>
@@ -293,30 +301,126 @@
                             data-target="#comprarModal">Comprar</button>
                         
                     </div>
-                    <div>
-                        Inserte su descuento <br><input type="text" class="discountTotal">
-                    </div>
                 </div>
             </div>
 
             <!-- TERMINA SECCIÓN DE PRECIO TOTAL -->
 
             <!-- COMIENZA EL MODAL DE COMPRA -->
-            <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel"
+            <div class="modal fade bd-example-modal-lg" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel"
                 aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="comprarModalLabel">Gracias por su compra</h5>
+                            <h3 class="modal-title text-center" id="comprarModalLabel">LLENE LOS SIGUIENTES DATOS PARA CONTINUAR A LA FORMA DE PAGO</h3>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
-                            <p>Pronto recibirá su pedido</p>
+                        <div class="modal-body" style="display: inline;">
+                          <div class="alert alert-primary" role="alert"><h2 style="text-align: center;">Proceso de Productos</h2></div>
+                            <div class="container">
+                              <div class="row">
+                                <div class="col-sm">
+                                  <label>Precio Total a Pagar:</label>
+                                  <input class="form-control small shoppingCartTotalModal" type="text" readonly value="0">
+                                </div>  
+                                <div class="col-sm">
+                                  <label>Número de Productos a Enviar:</label>
+                                  <input class="form-control small shoppingCartQuantity" type="text" readonly value="0">
+                                </div>  
+                            </div>
+                            </div>
+                            <br>
+
+                            <!-- RADIO BUTTON -->
+                            <div class="col-md-6">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="check" id="check" value="option1" checked onchange="javascript:hideContent()">
+                                  <label class="form-check-label" for="exampleRadios1">
+                                    NO Deseo aplicar un descuento
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="check" id="Checked" value="option2" onchange="javascript:showContent()">
+                                  <label class="form-check-label" for="exampleRadios2">
+                                    Deseo aplicar un descuento
+                                  </label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 generateTotal" style="display: none;" id="show">
+                              Monedas de descuento (99 máximo):
+                              <input class="form-control small shoppingCartTotalModal discountTotal" id='discount' type="text">
+                            </div>
+<br>
+                            <!-- RADIO BUTTON -->
+                            <div class="col-md-5">
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="correo">
+                                <label class="form-check-label" for="exampleRadios1">
+                                  Deseo Recibir ofertas de descuentos.
+                                </label>
+                              </div>
+                              <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon1">@</span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="MaldonadoMoy@hotmail.com" readonly>
+                              </div>
+                          </div>
+                          <hr>
+                          <h1 style="text-align: center;">Datos de Envío</h1>
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-sm">
+                                <select class="custom-select" name="provincia" id="provincia" onchange="cargarPueblos();">
+                                  <option value="">Seleccione una Provincia...</option>
+                                </select>
+                              </div>
+                              <div class="col-sm">
+                                <select class="custom-select" name="pueblo" id="pueblo">
+                                  <option value="">Seleccione un Pueblo...</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <br>
+                          <div class="container">
+                          <form>
+                            <div class="row">
+                              <div class="col">
+                                <label for="">Colonia</label>
+                                <input type="text" class="form-control" placeholder="Ejemplo: Villa Cuauhtemoc">
+                              </div>
+                              <div class="col">
+                                <label for="">Código Postal</label>
+                                <input type="text" class="form-control" placeholder="Ejemplo: 52080">
+                              </div>
+                            </div>
+                          </form>
                         </div>
+                          <br>
+                          <div class="container">
+                          <form>
+                            <div class="row">
+                              <div class="col">
+                                <label for="">Calle</label>
+                                <input type="text" class="form-control" placeholder="Ejemplo: Independencia">
+                              </div>
+                              <div class="col">
+                                <label for="">Número</label>
+                                <input type="text" class="form-control" placeholder="Ejemplo: 13">
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                        </div>
+                            
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-info" data-dismiss="modal">Seguir Comprando</button>
+                            <button type="button" class="btn btn-danger pagarButton" data-dismiss="modal">Pagar</button>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -350,6 +454,27 @@
         crossorigin="anonymous"></script>
 
     <script src="./carrito.js"> </script>
+
+
+    <script type="text/javascript">
+      function showContent() {
+          element = document.getElementById("show");
+          check = document.getElementById("Checked");
+          if (check.checked) {
+              element.style.display='block';
+          }
+      }
+  </script>
+
+    <script type="text/javascript">
+      function hideContent() {
+          element = document.getElementById("show");
+          check = document.getElementById("check");
+          if (check.checked) {
+              element.style.display='none';
+          }
+      }
+  </script>
 
 </body>
 
